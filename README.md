@@ -1,10 +1,10 @@
-# RemoveMojaveApps
-How to remove protected apps, such as News, Stocks, and Home from a Mojave macOS installation
+# RemoveCatalinaApps
+How to remove protected apps, such as News, Stocks, and Home from a Catalina macOS installation
 
 ### Special thanks to [9define](https://github.com/9define) for suggesting this workaround! :) 
 
 ## About
-Have you upgraded to Majave on your mac and object to sponsored apps? Refuse to be pushed Apple's liberal News or to be shilled Apple's Home ecosystem of products? Hate the XNU kernel? Don't want to disable SIP just to nuke a few apps?
+Have you upgraded to Catalina on your mac and object to sponsored apps? Refuse to be pushed Apple's liberal News or to be shilled Apple's Home ecosystem of products? Hate the XNU kernel? Don't want to disable SIP just to nuke a few apps?
 
 ## Problem
 ![alt text](https://raw.githubusercontent.com/banzr/RemoveMojaveApps/master/screens/cant-delete.png)
@@ -29,19 +29,30 @@ Have you upgraded to Majave on your mac and object to sponsored apps? Refuse to 
 ![Disk utility select root drive](https://raw.githubusercontent.com/banzr/RemoveMojaveApps/master/screens/unmounted-root-drive.jpg)
 ![Disk utility mount root drive](https://raw.githubusercontent.com/banzr/RemoveMojaveApps/master/screens/mount-root-drive.jpg)
 
+4a. If the internal disk is encrypted select startup disks and insert password, this will mount it and make it available
+
 5. Close Disk Utility
 
 6. Open Terminal by clicking `Utilities -> Terminal`
 
-7. `cd /Volumes/<Mojave root disk>/Applications/`
+7. Catalina systems apps are in: /Volumes/macos/System/Applications you can cd into it
 
-8. `rm -rf {News.app,Home.app,Stocks.app}`
+8. Make a copy of your apps if you want to go back of anything goes wrong (ie. future upgrades of MacOs)
 
-Results:
-![Terminal output](https://raw.githubusercontent.com/banzr/RemoveMojaveApps/master/screens/terminal-ouput.jpg)
+cp -r News.app "/Volumes/macos - Data/Users/pasquale/Desktop/News.app"
+cp -r Podcasts.app "/Volumes/macos - Data/Users/pasquale/Desktop/Podcasts.app"
+cp -r Books.app "/Volumes/macos - Data/Users/pasquale/Desktop/Books.app"
+cp -r Chess.app "/Volumes/macos - Data/Users/pasquale/Desktop/Chess.app"
+cp -r Home.app "/Volumes/macos - Data/Users/pasquale/Desktop/Home.app"
+cp -r Music.app "/Volumes/macos - Data/Users/pasquale/Desktop/Music.app"
+cp -r Photos.app "/Volumes/macos - Data/Users/pasquale/Desktop/Photos.app"
+cp -r Reminders.app "/Volumes/macos - Data/Users/pasquale/Desktop/Reminders.app"
+cp -r Stickies.app "/Volumes/macos - Data/Users/pasquale/Desktop/Stickies.app"
+cp -r Stocks.app "/Volumes/macos - Data/Users/pasquale/Desktop/Stocks.app"
 
-9. Reboot
+9. Remove the apps you don't want:
 
-10. Enjoy your new macOS without ads! :)
-![App drawer](https://raw.githubusercontent.com/banzr/RemoveMojaveApps/master/screens/app-drawer.jpg)
+rm -rf News.app/ Podcasts.app/ Books.app/ Chess.app/ Home.app/ Music.app/ Photos.app/ Reminders.app/ Stickies.app/ Stocks.app/
+
+10. Reboot and Enjoy your new macOS without stock bloatware!
 
